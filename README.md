@@ -9,9 +9,9 @@ The challenges have been completed as below:
 
     * A Python file called `main.py` to run each analysis
 
-    * A "Resources" folder that contains the CSV file
+    * A "Resources" folder that contains the CSV files `budget_data.csv` for the PyBank challenge and `election_data.csv` for the PyPoll challenge
 
-    * An "Analysis" folder that contains the output results as a  text file
+    * An "Analysis" folder that contains the output results as text files names `pyBank_analysis.txt` and `pyPoll_analysis.txt` respectively
 
 ## PyBank
 
@@ -31,13 +31,13 @@ The task was to create a Python script that analyzes financial records in the gi
 
 * The difference in Profits/Losses over the entire period of time was calculated (by subtracting next row from current row) and appended to a different list called `ProfLossChanges` using comprehension lists. Since the first month would not show any change, it is worth noting that a value of zero was entered at ProfLossChanges[0] for accuracy.
 
-* The `statistics` module was imported and its .mean() method was used in a function to calculate the average of the changes recorded in the `ProfLossChanges` list. Note that the average is calculated before adding the zero at the beginning of the list as described above.
+* The `statistics` module was imported and its `.mean()` method was used in a function to calculate the average of the changes recorded in the `ProfLossChanges` list. Note that the average is calculated before adding the zero at the beginning of the list as described above.
 
 * Once the greatest increase and decrease in `ProfLossChanges` was found, the index at which these values were was used to retrieve the corresponding date values from the `Dates` list (after confirming both lists were of equal length)
 
 ## PyPoll
 
-The task was to create a Python script that analyzes votes and calculates each of the following:
+The task was to create a Python script that analyzes votes in the given `election_data.csv` file and calculates each of the following:
 
   * The total number of votes cast
 
@@ -55,3 +55,5 @@ The task was to create a Python script that analyzes votes and calculates each o
 ```text
 "{:.3%}".format(num)
 ```
+
+* For output of candidate name, vote count and percentage, a for loop was used to avoid manually typing values at index[..] so as to account for future use where the number of candidates may perhaps not be known
