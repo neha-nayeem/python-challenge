@@ -53,13 +53,13 @@ for i in range(len(VoteCounts)):
 # --- calculate the winner based on most votes ---
 for i in range(len(VoteCounts)):
 
-    # if the number of votes is greater than winnercount (initially zero)
+    # if the number of votes is greater than WinnerCount (initially zero)
     if VoteCounts[i] > WinnerCount:
         
-        #update winnercount to the number of votes at index i
+        #update WinnerCount to the number of votes at index i
         WinnerCount = VoteCounts[i]
 
-        #update winner to the candidate name at index i
+        #update Winner to the candidate name at index i
         Winner = UniqueCandidates[i]
 
 #--- create a text file with the analysis output ---
