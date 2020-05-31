@@ -22,7 +22,7 @@ ProfLossChanges = []
 with open(inputfile, 'r') as budgetdata:
     reader = csv.reader(budgetdata, delimiter=",")
     
-     # --- store header rows into a Headers list ---
+    # --- store header rows into a Headers list ---
     Headers = next(reader)
 
     # --- for loop to go through each row in the CSV file and append values from date column to the 'Dates' list and Profits/Losses column to the 'ProfLoss' list ---
@@ -30,19 +30,19 @@ with open(inputfile, 'r') as budgetdata:
         Dates.append(row[0])
         ProfLoss.append(int(row[1]))
 
-    # --- for loop to go through each value in Profits/Losses list and calculate total ---
-    totalProfLoss = 0
-    for i in ProfLoss:
-        totalProfLoss = i + totalProfLoss
+# --- for loop to go through each value in Profits/Losses list and calculate total ---
+totalProfLoss = 0
+for i in ProfLoss:
+    totalProfLoss = i + totalProfLoss
 
-    # --- use list comprehension to create a new list with difference values of each successive row (next row - current row) ---
-    ProfLossChanges = [ProfLoss[i+1] - ProfLoss[i] for i in range(0,len(ProfLoss)-1)]
+# --- use list comprehension to create a new list with difference values of each successive row (next row - current row) ---
+ProfLossChanges = [ProfLoss[i+1] - ProfLoss[i] for i in range(0,len(ProfLoss)-1)]
 
-    # --- calculate average change by calling the function and store in variable ---
-    AverageChange = Average(ProfLossChanges)
+# --- calculate average change by calling the function and store in variable ---
+AverageChange = Average(ProfLossChanges)
 
-    # --- insert a value of zero at index 0 of the ProfLossChanges list as there is no previous data to subtract for the first month (thus also making the list equal in length to Dates and ProfLoss lists for index finding later) ---
-    ProfLossChanges.insert(0,0)
+# --- insert a value of zero at index 0 of the ProfLossChanges list as there is no previous data to subtract for the first month (thus also making the list equal in length to Dates and ProfLoss lists for index finding later) ---
+ProfLossChanges.insert(0,0)
 
 # --- for loop to calculate greatest increase and decrease in profits and losses ---
 GreatestIncrease = 0
