@@ -44,10 +44,11 @@ AverageChange = Average(ProfLossChanges)
 # --- insert a value of zero at index 0 of the ProfLossChanges list as there is no previous data to subtract for the first month (thus also making the list equal in length to Dates and ProfLoss lists for index finding later) ---
 ProfLossChanges.insert(0,0)
 
-# --- for loop to calculate greatest increase and decrease in profits and losses ---
+# --- initialize greatest increase/decrease variables to 0 ---
 GreatestIncrease = 0
 GreatestDecrease = 0
 
+# --- for loop to calculate greatest increase and decrease in profits and losses ---
 for i in range(len(ProfLossChanges)-1):
     if ProfLossChanges[i] < GreatestDecrease:
         GreatestDecrease = ProfLossChanges[i]
