@@ -11,7 +11,7 @@ The challenges have been completed as below:
 
     * A "Resources" folder that contains the CSV files `budget_data.csv` for the PyBank challenge and `election_data.csv` for the PyPoll challenge
 
-    * An "Analysis" folder that contains the output results as text files names `pyBank_analysis.txt` and `pyPoll_analysis.txt` respectively
+    * An "Analysis" folder that contains the output results as text files named `pyBank_analysis.txt` and `pyPoll_analysis.txt` respectively
 
 ## PyBank
 
